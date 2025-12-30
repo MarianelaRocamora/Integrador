@@ -56,21 +56,32 @@ section {
 }
 
 #hero {
-    height: 400px;
+    height: 500px; /* Un poco más alto */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(175, 128, 128);
     text-align: center;
-    max-width: none; 
+    /* Agregamos una imagen de fondo oscurecida para que se lea el texto */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/saphirus-textil-duvet.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white; /* Texto blanco para resaltar */
+    margin-bottom: 0;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    padding: 20px;
 }
 
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit ,(1fr)); 
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 30px;
     padding: 20px 0;
+    width: 100%;
 }
 
 .card {
@@ -84,11 +95,11 @@ section {
 }
 
 .card img {
-    
-    max-width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: 250%;
     display: block; 
-    margin-bottom: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
     border-radius: 5px; 
 }
 
@@ -236,3 +247,114 @@ iframe {
     display: block; 
 }
 
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fondo de la página */
+.login-main {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Cambiá los colores según tu temática */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Tarjeta del Login */
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.login-card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* Formulario */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #764ba2;
+}
+
+/* Botones */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #5a3a7e;
+}
+
+.login-footer {
+    margin-top: 25px;
+}
+
+.login-footer hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.btn-back {
+    text-decoration: none;
+    color: #764ba2;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.btn-back:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 25px;
+    }
+}
