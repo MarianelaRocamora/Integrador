@@ -1,107 +1,115 @@
-/* =========================================
-   1. RESET Y VARIABLES
-   ========================================= */
+/* ==================================================
+   VARIABLES + RESET
+================================================== */
 :root {
-    --celeste-saphirus: #00b4d8;
-    --azul-oscuro: #03045e;
-    --blanco: #ffffff;
-    --gris-claro: #f8f9fa;
-    --texto: #333333;
-    --transicion: all 0.3s ease;
+    --primary: #00b4d8;
+    --secondary: #03045e;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --text: #333333;
+    --radius: 15px;
+    --transition: all 0.3s ease;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 html {
-    scroll-behavior: smooth; /* Navegación suave entre secciones */
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--blanco);
-    color: var(--texto);
+    background-color: var(--white);
+    color: var(--text);
     line-height: 1.6;
 }
 
-/* =========================================
-   2. NAVBAR & MENU HAMBURGUESA (SIN JS)
-   ========================================= */
+/* ==================================================
+   NAVBAR
+================================================== */
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 5%;
+    background: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    background: var(--blanco);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--celeste-saphirus);
+    color: var(--primary);
 }
 
 .logo span {
-    color: var(--azul-oscuro);
+    color: var(--secondary);
 }
 
 .nav-links {
-    display: flex;
     list-style: none;
+    display: flex;
     gap: 25px;
+    align-items: center;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--azul-oscuro);
+    color: var(--secondary);
     font-weight: 500;
-    transition: var(--transicion);
+    transition: var(--transition);
 }
 
 .nav-links a:hover {
-    color: var(--celeste-saphirus);
+    color: var(--primary);
 }
 
-/* Checkbox Hack para el menú */
+/* Botón ingresar navbar */
+.nav-links .btn-primary {
+    padding: 8px 20px;
+    border-radius: 30px;
+}
+
+/* Menu hamburguesa */
 #menu-toggle {
     display: none;
 }
 
 .menu-label {
     display: none;
-    cursor: pointer;
     flex-direction: column;
     gap: 5px;
+    cursor: pointer;
 }
 
 .menu-label span {
     width: 30px;
     height: 3px;
-    background: var(--azul-oscuro);
+    background: var(--secondary);
     border-radius: 5px;
 }
 
-/* =========================================
-   3. HERO SECTION (PORTADA)
-   ========================================= */
+/* ==================================================
+   HERO
+================================================== */
 .hero {
     height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-    url('./images/logo-saphirus-social.jpg') no-repeat center center/cover;
+    margin-top: 65px;
+    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+                url('./images/logo-saphirus-social.jpg') center/cover no-repeat;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    color: var(--blanco);
-    margin-top: 60px;
+    color: var(--white);
 }
 
 .hero-content h1 {
@@ -109,115 +117,126 @@ body {
     margin-bottom: 15px;
 }
 
+.hero-content p {
+    margin-bottom: 20px;
+}
+
+/* ==================================================
+   BOTONES
+================================================== */
 .btn-primary {
     display: inline-block;
     padding: 12px 30px;
-    background-color: var(--celeste-saphirus);
-    color: var(--blanco);
+    background: var(--primary);
+    color: var(--white);
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
-    transition: var(--transicion);
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
-    background-color: var(--azul-oscuro);
+    background: var(--secondary);
 }
 
-/* =========================================
-   4. BENEFICIOS (ABOUT US)
-   ========================================= */
+/* ==================================================
+   BENEFICIOS
+================================================== */
 .about {
     padding: 80px 10%;
+    background: var(--light-gray);
     text-align: center;
-    background: var(--gris-claro);
 }
 
 .benefits-grid {
+    margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    margin-top: 40px;
-}
-
-.benefit {
-    padding: 20px;
 }
 
 .benefit h3 {
+    color: var(--primary);
     margin-bottom: 10px;
-    color: var(--celeste-saphirus);
 }
 
-/* =========================================
-   5. PRODUCTOS (CORRECCIÓN DESKTOP)
-   ========================================= */
-  
-   /* Contenedor de las tarjetas */
+/* ==================================================
+   PRODUCTOS
+================================================== */
 .products-container {
+    padding: 40px 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 20px;
 }
 
-/* La tarjeta */
 .card {
-    border: 1px solid #eee;
+    background: var(--white);
     border-radius: 10px;
-    overflow: hidden; /* Para que la imagen respete los bordes redondeados */
+    overflow: hidden;
+    border: 1px solid #eee;
     display: flex;
     flex-direction: column;
-    background: #fff;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
-/* Estilos para la imagen */
+.card:hover {
+    transform: translateY(-5px);
+}
+
 .card img {
-    width: 100%;       /* Ocupa todo el ancho de la tarjeta */
-    height: 250px;      /* Altura fija para que todas las tarjetas sean iguales */
-    object-fit: cover;  /* Ajusta la imagen sin estirarla (la recorta sutilmente si es necesario) */
-    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
 }
 
 .card-info {
     padding: 15px;
     text-align: center;
 }
-   
+
+.card-info h3 {
+    margin-bottom: 10px;
+}
 
 .price {
-    display: block;
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--azul-oscuro);
+    color: var(--secondary);
     margin: 15px 0;
 }
 
 .btn-buy {
     width: 100%;
     padding: 10px;
+    background: var(--primary);
     border: none;
-    background: var(--celeste-saphirus);
-    color: white;
+    color: var(--white);
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
 }
 
-/* =========================================
-   6. CONTACTO & MAPA
-   ========================================= */
+.btn-buy:hover {
+    background: var(--secondary);
+}
+
+/* ==================================================
+   CONTACTO
+================================================== */
 .contact-container {
-    display: flex;
-    flex-wrap: wrap;
     max-width: 1200px;
     margin: 50px auto;
     padding: 0 20px;
+    display: flex;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
-.form-side, .map-side {
+.form-side,
+.map-side {
     flex: 1 1 400px;
 }
 
@@ -227,32 +246,87 @@ body {
     gap: 15px;
 }
 
-.form-side input, .form-side textarea {
+.form-side input,
+.form-side textarea {
     padding: 12px;
-    border: 1px solid #ddd;
     border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
 .map-side iframe {
     width: 100%;
-    height: 100%;
     min-height: 300px;
-    border-radius: 15px;
+    border-radius: var(--radius);
 }
 
-/* =========================================
-   7. FOOTER
-   ========================================= */
-footer {
-    background: var(--azul-oscuro);
-    color: white;
+/* ==================================================
+   LOGIN
+================================================== */
+.login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background: var(--light-gray);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 15px rgba(0,0,0,.1);
+}
+
+.login-container h2 {
     text-align: center;
-    padding: 40px 0;
+    color: var(--primary);
+    margin-bottom: 10px;
 }
 
-/* =========================================
-   8. RESPONSIVE (CELULARES)
-   ========================================= */
+.login-container p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    border: none;
+    color: var(--white);
+    font-weight: bold;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background: var(--secondary);
+}
+
+.login-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
 @media (max-width: 768px) {
     .menu-label {
         display: flex;
@@ -264,14 +338,13 @@ footer {
         top: 65px;
         left: 0;
         width: 100%;
-        background: var(--blanco);
+        background: var(--white);
         flex-direction: column;
         text-align: center;
         padding: 20px 0;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 10px rgba(0,0,0,.1);
     }
 
-    /* Mostrar menú al clickear hamburguesa */
     #menu-toggle:checked ~ .nav-links {
         display: flex;
     }
@@ -279,64 +352,4 @@ footer {
     .hero-content h1 {
         font-size: 2.2rem;
     }
-}
-
-:root {
-    --primary-color: #007bff; /* Azul principal */
-    --accent-color: #6c757d;  /* Gris neutro */
-    --bg-dark: #1a1a1a;       /* Fondo oscuro si aplica */
-    --text-light: #ffffff;
-    --border-radius: 15px;
-}
-
-.login-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #f8f9fa; /* Ajustar según el fondo de la página */
-    border-radius: var(--border-radius);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-
-
-
-
-.login-container h2 {
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.btn-login {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--primary-color);
-    border: none;
-    color: white;
-    font-weight: bold;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.btn-login:hover {
-    background-color: #0056b3;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column; /* Pone la etiqueta arriba del input */
-    gap: 8px;              /* Espacio pequeño entre etiqueta e input */
-    margin-bottom: 20px;   /* Espacio grande entre los dos bloques */
-    text-align: left;
-}
-
-.form-control {
-    padding: 10px;         /* Espacio interno para que no se vea apretado */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;           /* Para que ocupen el mismo ancho */
 }
