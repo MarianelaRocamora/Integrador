@@ -280,3 +280,63 @@ footer {
         font-size: 2.2rem;
     }
 }
+
+:root {
+    --primary-color: #007bff; /* Azul principal */
+    --accent-color: #6c757d;  /* Gris neutro */
+    --bg-dark: #1a1a1a;       /* Fondo oscuro si aplica */
+    --text-light: #ffffff;
+    --border-radius: 15px;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f8f9fa; /* Ajustar según el fondo de la página */
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+
+.login-container h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Pone la etiqueta arriba del input */
+    gap: 8px;              /* Espacio pequeño entre etiqueta e input */
+    margin-bottom: 20px;   /* Espacio grande entre los dos bloques */
+    text-align: left;
+}
+
+.form-control {
+    padding: 10px;         /* Espacio interno para que no se vea apretado */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;           /* Para que ocupen el mismo ancho */
+}
