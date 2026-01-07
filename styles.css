@@ -1,360 +1,282 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================================
+   1. RESET Y VARIABLES
+   ========================================= */
+:root {
+    --celeste-saphirus: #00b4d8;
+    --azul-oscuro: #03045e;
+    --blanco: #ffffff;
+    --gris-claro: #f8f9fa;
+    --texto: #333333;
+    --transicion: all 0.3s ease;
 }
 
-body {
-    font-family: system-ui; 
-    background-color:lightgrey;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.6;
-    min-height: 100vh; 
-}
-
-header {
-    background-color: rosybrown;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    padding: 1rem;
-    position: sticky; 
-    top: 0;
-    z-index: 1000; 
-}
-
-#menu-toggle {
-    display: none;
-}
-
-.hamburger{
-    font-size: 2rem;
-    cursor: pointer;
-    display: none; 
-}
-
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex; 
-    gap: 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-section {
-    padding: 20px;
-    max-width: 1200px; 
-    margin: 0 auto; 
-    width: 100%;
-}
-
-#hero {
-    height: 500px; /* Un poco más alto */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* Agregamos una imagen de fondo oscurecida para que se lea el texto */
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/saphirus-textil-duvet.jpg'); 
-    background-size: cover;
-    background-position: center;
-    color: white; /* Texto blanco para resaltar */
-    margin-bottom: 0;
-}
-
-#hero h1 {
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-    padding: 20px;
-}
-
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
-    gap: 30px;
-    padding: 20px 0;
-    width: 100%;
-}
-
-.card {
-    border: 1px solid #ccc;
-    padding: 15px;
-    text-align: center;
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.card img {
-    width: 100%;
-    height: 250%;
-    display: block; 
-    object-fit: cover;
-    margin-bottom: 15px;
-    border-radius: 5px; 
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: auto; 
-}
-
-body > h1 {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0;
-}
-
-#Registro, #inicio\ sesion {
-    padding: 20px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    max-width: 400px; 
-    width: 90%;
-    margin: 20px auto; 
-}
-
-form label {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-form input, form textarea {
-    margin: 5px 0 15px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.btn-primary {
-    background-color: rosybrown;
-    color: white;
-    padding: 10px 20px; 
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 10px;
-    transition: background-color 0.3s ease; 
-}
-
-.btn-primary:hover {
-    background-color: #b08080; 
-}
-
-form button { 
-    background-color: rosybrown;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 10px;
-    width: 100%; 
-}
-
-iframe {
-    width: 100%; 
-    max-width: 100%;
-    height: 450px;
-    border-radius: 8px;
-}
-
-
-@media (max-width: 780px) {
-    .hamburger{
-        display: block;
-    }
-
-    nav ul {
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 65px; 
-        left: 0;
-        width: 100%;
-        background-color: #555; 
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        z-index: 999;
-    }
-    
-    nav ul li {
-        display: block;
-        text-align: center;
-        margin: 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    nav ul li a {
-        display: block;
-        padding: 15px;
-    }
-
-    #menu-toggle:checked ~ nav ul { 
-        display: flex;
-    }
-
-    
-    .card-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-        gap: 20px;
-        padding: 20px 0;
-    }
-    
-   
-    #nosotros img {
-        max-width: 90%; 
-        height: auto;
-        border-radius: 10px;
-        margin: 20px auto;
-    }
-
-} 
-
-#nosotros img {
-    max-width: 60%;
-    height: auto;
-    border-radius: 10px;
-    margin: 20px auto; 
-    display: block; 
-}
-
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Fondo de la página */
-.login-main {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Cambiá los colores según tu temática */
-    height: 100vh;
+html {
+    scroll-behavior: smooth; /* Navegación suave entre secciones */
+}
+
+body {
+    background-color: var(--blanco);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. NAVBAR & MENU HAMBURGUESA (SIN JS)
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: var(--blanco);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--celeste-saphirus);
+}
+
+.logo span {
+    color: var(--azul-oscuro);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--azul-oscuro);
+    font-weight: 500;
+    transition: var(--transicion);
+}
+
+.nav-links a:hover {
+    color: var(--celeste-saphirus);
+}
+
+/* Checkbox Hack para el menú */
+#menu-toggle {
+    display: none;
+}
+
+.menu-label {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-label span {
+    width: 30px;
+    height: 3px;
+    background: var(--azul-oscuro);
+    border-radius: 5px;
+}
+
+/* =========================================
+   3. HERO SECTION (PORTADA)
+   ========================================= */
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+    url('./images/logo-saphirus-social.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 60px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--celeste-saphirus);
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: var(--transicion);
+}
+
+.btn-primary:hover {
+    background-color: var(--azul-oscuro);
+}
+
+/* =========================================
+   4. BENEFICIOS (ABOUT US)
+   ========================================= */
+.about {
+    padding: 80px 10%;
+    text-align: center;
+    background: var(--gris-claro);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.benefit {
     padding: 20px;
 }
 
-/* Tarjeta del Login */
-.login-card {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    width: 100%;
-    max-width: 400px;
+.benefit h3 {
+    margin-bottom: 10px;
+    color: var(--celeste-saphirus);
+}
+
+/* =========================================
+   5. PRODUCTOS (CORRECCIÓN DESKTOP)
+   ========================================= */
+  
+   /* Contenedor de las tarjetas */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* La tarjeta */
+.card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden; /* Para que la imagen respete los bordes redondeados */
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+/* Estilos para la imagen */
+.card img {
+    width: 100%;       /* Ocupa todo el ancho de la tarjeta */
+    height: 250px;      /* Altura fija para que todas las tarjetas sean iguales */
+    object-fit: cover;  /* Ajusta la imagen sin estirarla (la recorta sutilmente si es necesario) */
+    display: block;
+}
+
+.card-info {
+    padding: 15px;
     text-align: center;
 }
+   
 
-.login-card h2 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.login-card p {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 30px;
-}
-
-/* Formulario */
-.input-group {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.input-group label {
+.price {
     display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #444;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--azul-oscuro);
+    margin: 15px 0;
 }
 
-.input-group input {
+.btn-buy {
     width: 100%;
+    padding: 10px;
+    border: none;
+    background: var(--celeste-saphirus);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* =========================================
+   6. CONTACTO & MAPA
+   ========================================= */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.form-side, .map-side {
+    flex: 1 1 400px;
+}
+
+.form-side form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-side input, .form-side textarea {
     padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s;
+    border-radius: 5px;
 }
 
-.input-group input:focus {
-    border-color: #764ba2;
-}
-
-/* Botones */
-.btn-login {
+.map-side iframe {
     width: 100%;
-    padding: 12px;
-    background-color: #764ba2;
+    height: 100%;
+    min-height: 300px;
+    border-radius: 15px;
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+footer {
+    background: var(--azul-oscuro);
     color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
+    text-align: center;
+    padding: 40px 0;
 }
 
-.btn-login:hover {
-    background-color: #5a3a7e;
-}
+/* =========================================
+   8. RESPONSIVE (CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+    .menu-label {
+        display: flex;
+    }
 
-.login-footer {
-    margin-top: 25px;
-}
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: var(--blanco);
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    }
 
-.login-footer hr {
-    margin: 20px 0;
-    border: 0;
-    border-top: 1px solid #eee;
-}
+    /* Mostrar menú al clickear hamburguesa */
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
 
-.btn-back {
-    text-decoration: none;
-    color: #764ba2;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.btn-back:hover {
-    text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-    .login-card {
-        padding: 25px;
+    .hero-content h1 {
+        font-size: 2.2rem;
     }
 }
